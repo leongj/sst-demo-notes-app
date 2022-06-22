@@ -1,5 +1,8 @@
 import AWS from "aws-sdk";
 
+// This class effectively acts as a wrapper for the DynamoDB DocumentClient SDK.
+// Simplifies the code in the lambda functions.
+
 const client = new AWS.DynamoDB.DocumentClient();
 
 export default {
