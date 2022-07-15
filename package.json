@@ -14,11 +14,15 @@
     "@serverless-stack/cli": "1.3.0",
     "@serverless-stack/resources": "1.3.0",
     "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.0.4",
     "aws-cdk-lib": "2.24.0",
     "typescript": "^4.7.3",
     "vitest": "^0.14.2"
   },
   "workspaces": [
     "api"
-  ]
+  ],
+  "dependencies": {
+    "stripe": "^9.13.0"
+  }
 }
