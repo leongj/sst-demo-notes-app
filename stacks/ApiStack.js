@@ -5,6 +5,7 @@ export function ApiStack({ stack, app }) {
   const { table } = use(StorageStack);
 
   // Create the API
+  // Note that CORS is enabled by default
   const api = new Api(stack, "Api", {
     defaults: {
       authorizer: "iam",
