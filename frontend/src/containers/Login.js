@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom"; // No longer required
 import Form from "react-bootstrap/Form";
 import LoaderButton from "../components/LoaderButton";
 import "./Login.css";
@@ -13,7 +13,7 @@ export default function Login() {
   // thing returned from useAppContext is related to authentication.
   // Aren't there other uses for the AppContext?
   const { userHasAuthenticated } = useAppContext();
-  const nav = useNavigate();
+  // const nav = useNavigate(); // No longer required
   const [isLoading, setIsLoading] = useState(false);
   const [fields, handleFieldChange] = useFormFields({
     email: "",
@@ -33,7 +33,7 @@ export default function Login() {
     try {
       await Auth.signIn(fields.email, fields.password);
       userHasAuthenticated(true);
-      nav("/");
+      //  nav("/");  // This is now handled by UnauthenticatedRoute
     } catch (e) {
       onError(e);
       setIsLoading(false);
